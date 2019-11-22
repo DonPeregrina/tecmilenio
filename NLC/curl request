@@ -1,0 +1,20 @@
+Hay que sustituir las variables en las que están presentes las llaves
+
+Primero hacemos un curl para que el servicio entrene y obtener un Classifier ID
+
+curl -X POST -u "apikey:{apikey}" \
+--header "Content-Type: text/plain;charset=utf-8" \
+--header "Accept: application/json" \
+--data-binary @{path_to_file}profile.txt \
+"{url}/v3/profile?version=2017-10-13"
+
+Podemos hacer consultas al igual para saber el estado de nuestro modelo
+
+curl -u "apikey:{}” \
+"{url}/v1/classifiers/{CID}"
+
+Una vez que nos arroje que el entrenamiento terminó de clasificarse, ya es posible consumir el modelo
+
+curl -G -u "apikey:{apikey}" \
+"{url}/v1/classifiers/{classifier_id}/classify" \
+--data-urlencode "text={texto}"

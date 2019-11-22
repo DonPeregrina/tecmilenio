@@ -1,0 +1,16 @@
+Usamos el siguiente comando:
+
+curl -X POST -u "apikey:{apikey}" \
+"{url}/v1/analyze?version=2019-07-12" \
+--header "Content-Type: application/json" \
+--data '{
+  "url": "http://newsroom.ibm.com/Guerbet-and-IBM-Watson-Health-Announce-Strategic-Partnership-for-Artificial-Intelligence-in-Medical-Imaging-Liver",
+  "features": {
+    "sentiment": {},
+    "categories": {},
+    "concepts": {},
+    "entities": {},
+    "keywords": {}
+  }
+}'
+

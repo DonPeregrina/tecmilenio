@@ -1,0 +1,21 @@
+Ahora usamos este comando
+
+curl -X POST -u "apikey:{apikey}" \
+"{url}/v1/analyze?version=2019-07-12" \
+--request POST \
+--header "Content-Type: application/json" \
+--data '{
+  "text": "Amo las manzanas, odio las naranjas",
+  "features": {
+    "sentiment": {
+      "targets": [
+        "manzanas",
+        "naranjas",
+      ]
+    },
+    "keywords": {
+      "emotion": true
+    }
+  }
+}'
+
